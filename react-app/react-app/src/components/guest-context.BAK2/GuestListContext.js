@@ -60,3 +60,5 @@ export function GuestListContext({ guests, openForm, isEdit, deleteGuest }) {
     </GuestContext.Consumer>
   );
 }
+
+export default GuestListContext;

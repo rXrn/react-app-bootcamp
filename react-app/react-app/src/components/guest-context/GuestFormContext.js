@@ -9,6 +9,7 @@ export class GuestFormContext extends Component {
     const { guest } = props;
     this.state = {
       form: {
+        id: guest?.id || "",
         name: guest?.name || "",
         phone: guest?.phone || "",
         email: guest?.email || "",
@@ -35,7 +36,12 @@ export class GuestFormContext extends Component {
 
   handleFormSubmit(saveGuest, event) {
     event.preventDefault();
-    saveGuest(this.state.form);
+    const { guest } = this.props;
+    const guestFormValue = this.state.form;
+    if (guest?.id) {
+      guestFormValue.id = guest.id;
+    }
+    saveGuest(guestFormValue);
     this.props.openList();
   }
 

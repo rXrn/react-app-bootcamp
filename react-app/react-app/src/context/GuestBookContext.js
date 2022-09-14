@@ -1,7 +1,9 @@
 import { Component } from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import { GuestFormContext } from "../components/guest-context-copy2/GuestFormContext.js.bak";
-import { GuestListContext } from "../components/guest-context-copy2/GuestListContext.js.bak";
+import { GuestBookFormFn } from "../components/guest-book/GuestBookFormFn";
+import { GuestBookListCtxFn } from "../components/guest-context/GuestBookListCtxFn";
+import { GuestFormContext } from "../components/guest-context/GuestFormContext";
+import { GuestListContext } from "../components/guest-context/GuestListContext";
 import { GuestProvider } from "./guest-context";
 
 export class GuestBookContext extends Component {
@@ -38,12 +40,12 @@ export class GuestBookContext extends Component {
           <GuestProvider>
             <Button onClick={() => this.openForm()}>Add Guest</Button>
             {this.state.page === "list" ? (
-              <GuestListContext
+              <GuestBookListCtxFn
                 openForm={this.openForm}
                 isEdit={this.state.isEdit}
               />
             ) : (
-              <GuestFormContext
+              <GuestBookFormFn
                 openList={this.openList}
                 guest={this.state.data}
               />

@@ -32,9 +32,15 @@ export class GuestProvider extends Component {
     this.deleteGuest = this.deleteGuest.bind(this);
   }
 
-  saveGuest(guests) {
-    // if (guest.id) guests.id = uniqid();
-    this.setState({ guests: [...this.state.guests, guests], page: "list" });
+  saveGuest(guest, index) {
+    const { guests } = this.props;
+    if (guest?.id) {
+      guests.splice(index, 1, guest);
+      this.setState({ guests, index: null, page: "list" });
+    } else {
+      guest.id = uniqid();
+      this.setState({ guests: [...this.state.guests, guests], page: "list" });
+    }
   }
 
   deleteGuest(index) {
@@ -86,6 +92,6 @@ export function withGuestConsumer(mapToProps) {
         );
       }
     }
-    return GuestCustomer;
+    return GuestConsumer;
   };
 }

@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { Component } from "react";
 import { GuestForm } from "./GuestForm";
 import { GuestBookList } from "./GuestBookList";
+import { GuestBookFormFn } from "./GuestBookFormFn";
 // import Table from "react-bootstrap/Table";
 
 const guests = [
@@ -62,10 +63,10 @@ export class GuestBook extends Component {
       return (
         <Row as="section" className="mx-5 my-3">
           {elements}
-          <GuestForm
+          <GuestBookFormFn
             openList={this.openList}
             saveGuest={this.saveGuest}
-          ></GuestForm>
+          ></GuestBookFormFn>
         </Row>
       );
     } else {
