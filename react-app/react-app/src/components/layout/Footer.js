@@ -6,17 +6,24 @@ export function Footer() {
     console.log("Batal klik");
   };
   return (
-    <Row as="footer">
-      <Navbar bg="dark" variant="dark" className="justify-content-center">
-        <Container fluid>
-          <Navbar.Brand
-            href="https://www.google.com"
-            onClick={(e) => handleClick(e)}
-          >
-            React Footer
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
+    <Row as="footer" className="fixed-bottom text-center">
+      <Col>
+        <Navbar
+          bg="dark"
+          variant="dark"
+          className="justify-content-center text-center"
+        >
+          <Container fluid>
+            <Navbar.Brand
+              href="https://www.google.com"
+              onClick={(e) => handleClick(e)}
+              className="text-center"
+            >
+              React Footer
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+      </Col>
     </Row>
   );
 }

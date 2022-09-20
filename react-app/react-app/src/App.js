@@ -6,15 +6,25 @@ import { CounterWithContext } from "./components/counter-context/CounterContext.
 import { GuestBookContext } from "./context/GuestBookContext.js";
 import { CounterFn } from "./components/counter/CounterFn.js";
 import { GuestBookFormFn } from "./components/guest-book/GuestBookFormFn.js";
-import { ShoeLocker } from "./components/shoe-locker/ShoeLocker.js";
+import { ShoeLocker } from "./components/shoe-locker/ShoeLocker.js.bak";
 import { CounterRedux } from "./components/counter-redux/CounterRedux.js";
+import { Provider } from "react-redux";
+import { GuestBookRedux } from "./components/guest-book-redux/GuestBookRedux.js";
+import { appStore } from "./reducer/store.js";
+import { lockerStore } from "./reducer/locker-store.js";
+import { GuestBookReduxForm } from "./components/guest-book-redux/GuestBookReduxForm.js";
+import { ShoeLockerList } from "./components/locker-redux/ShoeLockerList.js";
 
 export function App() {
   return (
     <Container fluid>
       <Header></Header>
       {/* <CounterFn /> */}
-      <CounterRedux />
+      <Provider store={lockerStore}>
+        <ShoeLockerList />
+        {/* <GuestBookReduxForm /> */}
+      </Provider>
+
       <Footer className="justify-content-center"></Footer>
     </Container>
   );
