@@ -29,9 +29,9 @@ export function GuestBookFormFn(props) {
     }
   };
 
-  const handleFormSubmit = (saveGuest, event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    const { guest } = this.props;
+    const { saveGuest, guest } = this.props;
     const guestFormValue = this.state.form;
     if (guest?.id) {
       guestFormValue.id = guest.id;

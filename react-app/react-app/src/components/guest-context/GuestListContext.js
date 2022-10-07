@@ -28,7 +28,7 @@ export function GuestListContext({ guests, openForm, isEdit, deleteGuest }) {
                   <td>
                     <Button
                       className="mx-2"
-                      onClick={() => openForm(value, key, true)}
+                      onClick={() => openForm(value, key)}
                     >
                       Edit
                     </Button>

@@ -4,6 +4,8 @@ import "./index.css";
 import { App } from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { RouterProvider, Routes } from "react-router-dom";
+import { routes } from "./routes/routes";
 // import "..src/assets/css/styles.css";
 // import contoh from "..assets/css/styles.module.css";
 
@@ -24,7 +26,8 @@ root.render(
     {/* {hello}
     {greet}
     {greetHello("Ari")} */}
-    <App />
+    {/* <App /> */}
+    <RouterProvider router={routes} />
   </React.StrictMode>
 );
 

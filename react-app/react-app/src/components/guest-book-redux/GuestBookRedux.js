@@ -16,12 +16,15 @@ import {
   Tooltip,
 } from "react-bootstrap";
 import { GuestBookReduxForm } from "./GuestBookReduxForm";
+import { useParams } from "react-router-dom";
 
 export function GuestBookRedux(props) {
   //useEffect : menambahkan fungsi tambahan (side effect) setelah komponen ini dirender/diload
   //useSelector : menentukan state yang akan digunakan di component ini
   //useDispatch : action
   const state = useSelector((storedState) => storedState.guest);
+  const id = useParams();
+  const [searchParams, setSearchParams] = searchParams();
   const dispatch = useDispatch();
   const [page, setPage] = useState("list");
   const [selectedGuest, selectGuest] = useState({

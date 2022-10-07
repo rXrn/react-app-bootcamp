@@ -14,6 +14,7 @@ import { appStore } from "./reducer/store.js";
 import { lockerStore } from "./reducer/locker-store.js";
 import { GuestBookReduxForm } from "./components/guest-book-redux/GuestBookReduxForm.js";
 import { ShoeLockerList } from "./components/locker-redux/ShoeLockerList.js";
+import { Outlet } from "react-router-dom";
 
 export function App() {
   return (
@@ -21,7 +22,10 @@ export function App() {
       <Header></Header>
       {/* <CounterFn /> */}
       <Provider store={lockerStore}>
-        <ShoeLockerList />
+        <Outlet />
+
+        {/* <GuestBookContext /> */}
+
         {/* <GuestBookReduxForm /> */}
       </Provider>
 
